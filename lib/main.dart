@@ -332,9 +332,9 @@ class _MainScaffoldState extends State<MainScaffold> {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
           decoration: BoxDecoration(
-            color: isSelected ? AppColors.cyan.withOpacity(0.15) : Colors.transparent,
+            color: isSelected ? AppColors.cyan.withValues(alpha: 0.15) : Colors.transparent,
             borderRadius: BorderRadius.circular(10),
-            border: isSelected ? Border.all(color: AppColors.cyan.withOpacity(0.4)) : null,
+            border: isSelected ? Border.all(color: AppColors.cyan.withValues(alpha: 0.4)) : null,
           ),
           child: Row(
             children: [

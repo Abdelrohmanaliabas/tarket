@@ -92,7 +92,7 @@ class _TodoScreenState extends State<TodoScreen> {
                           avatar: Icon(temp.categoryIcon, size: 16, color: isSel ? Colors.white : temp.categoryColor),
                           label: Text(temp.categoryArabicName),
                           selected: isSel,
-                          selectedColor: temp.categoryColor.withOpacity(0.3),
+                          selectedColor: temp.categoryColor.withValues(alpha: 0.3),
                           backgroundColor: AppColors.bgSurfaceLight,
                           labelStyle: TextStyle(
                             fontSize: 11,
@@ -135,7 +135,7 @@ class _TodoScreenState extends State<TodoScreen> {
                           child: ChoiceChip(
                             label: Text(pTitle),
                             selected: isSel,
-                            selectedColor: pColor.withOpacity(0.3),
+                            selectedColor: pColor.withValues(alpha: 0.3),
                             backgroundColor: AppColors.bgSurfaceLight,
                             labelStyle: TextStyle(
                               fontSize: 12,
@@ -215,8 +215,9 @@ class _TodoScreenState extends State<TodoScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.all(24.0),
+        body: SelectionArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -383,7 +384,8 @@ class _TodoScreenState extends State<TodoScreen> {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildCategoryChip(String title, TaskCategory? category) {
@@ -399,7 +401,7 @@ class _TodoScreenState extends State<TodoScreen> {
           });
         },
         backgroundColor: AppColors.bgSurface,
-        selectedColor: AppColors.cyan.withOpacity(0.2),
+        selectedColor: AppColors.cyan.withValues(alpha: 0.2),
         labelStyle: TextStyle(
           color: isSelected ? AppColors.cyan : AppColors.textSecondary,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
@@ -419,7 +421,7 @@ class _TodoScreenState extends State<TodoScreen> {
         color: AppColors.bgSurface,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: task.isCompleted ? AppColors.emeraldGreen.withOpacity(0.4) : AppColors.borderLight,
+          color: task.isCompleted ? AppColors.emeraldGreen.withValues(alpha: 0.4) : AppColors.borderLight,
           width: task.isCompleted ? 1.2 : 0.8,
         ),
       ),
@@ -453,7 +455,7 @@ class _TodoScreenState extends State<TodoScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
-                color: task.categoryColor.withOpacity(0.15),
+                color: task.categoryColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Row(
@@ -477,7 +479,7 @@ class _TodoScreenState extends State<TodoScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
-                color: task.priorityColor.withOpacity(0.15),
+                color: task.priorityColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(

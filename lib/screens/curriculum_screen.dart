@@ -152,8 +152,9 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.all(24.0),
+        body: SelectionArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -300,7 +301,8 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildFilterChip(String label, int phaseId) {
@@ -316,7 +318,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
           });
         },
         backgroundColor: AppColors.bgSurface,
-        selectedColor: AppColors.cyan.withOpacity(0.2),
+        selectedColor: AppColors.cyan.withValues(alpha: 0.2),
         labelStyle: TextStyle(
           color: isSelected ? AppColors.cyan : AppColors.textSecondary,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
@@ -336,12 +338,12 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
         color: AppColors.bgSurface,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
-          color: day.isCompleted ? AppColors.emeraldGreen.withOpacity(0.6) : AppColors.borderLight,
+          color: day.isCompleted ? AppColors.emeraldGreen.withValues(alpha: 0.6) : AppColors.borderLight,
           width: day.isCompleted ? 1.5 : 0.8,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withValues(alpha: 0.2),
             blurRadius: 8,
             offset: const Offset(0, 3),
           ),
@@ -427,7 +429,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                       Container(
                         padding: const EdgeInsets.all(6),
                         decoration: BoxDecoration(
-                          color: AppColors.cyan.withOpacity(0.15),
+                          color: AppColors.cyan.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Icon(Icons.menu_book_rounded, color: AppColors.cyan, size: 18),
@@ -469,9 +471,9 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                   Container(
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: AppColors.purpleViolet.withOpacity(0.1),
+                      color: AppColors.purpleViolet.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: AppColors.purpleViolet.withOpacity(0.3)),
+                      border: Border.all(color: AppColors.purpleViolet.withValues(alpha: 0.3)),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -479,7 +481,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                         Container(
                           padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                            color: AppColors.purpleViolet.withOpacity(0.2),
+                            color: AppColors.purpleViolet.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Icon(Icons.code_rounded, color: AppColors.purpleViolet, size: 20),

@@ -54,8 +54,9 @@ class _TimerScreenState extends State<TimerScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.all(24.0),
+        body: SelectionArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -107,13 +108,13 @@ class _TimerScreenState extends State<TimerScreen> {
                           color: AppColors.bgSurface,
                           boxShadow: [
                             BoxShadow(
-                              color: activeColor.withOpacity(0.2),
+                              color: activeColor.withValues(alpha: 0.2),
                               blurRadius: 30,
                               spreadRadius: 5,
                             ),
                           ],
                           border: Border.all(
-                            color: activeColor.withOpacity(0.3),
+                            color: activeColor.withValues(alpha: 0.3),
                             width: 2,
                           ),
                         ),
@@ -238,7 +239,8 @@ class _TimerScreenState extends State<TimerScreen> {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildModeButton(String title, TimerMode mode, Color color) {
@@ -246,7 +248,7 @@ class _TimerScreenState extends State<TimerScreen> {
     return ElevatedButton(
       onPressed: () => _timer.setMode(mode),
       style: ElevatedButton.styleFrom(
-        backgroundColor: isSelected ? color.withOpacity(0.2) : AppColors.bgSurface,
+        backgroundColor: isSelected ? color.withValues(alpha: 0.2) : AppColors.bgSurface,
         foregroundColor: isSelected ? color : AppColors.textSecondary,
         elevation: 0,
         side: BorderSide(color: isSelected ? color : AppColors.borderLight),
@@ -274,7 +276,7 @@ class _TimerScreenState extends State<TimerScreen> {
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.15),
+            color: color.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(icon, color: color, size: 20),

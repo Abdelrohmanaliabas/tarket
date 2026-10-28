@@ -51,8 +51,9 @@ class _HabitsScreenState extends State<HabitsScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.all(24.0),
+        body: SelectionArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -89,7 +90,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
                       borderRadius: BorderRadius.circular(14),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.redLaravel.withOpacity(0.3),
+                          color: AppColors.redLaravel.withValues(alpha: 0.3),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -227,7 +228,8 @@ class _HabitsScreenState extends State<HabitsScreen> {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildSectionHeader({
@@ -243,7 +245,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
           Container(
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icon, color: color, size: 18),
@@ -278,7 +280,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
         color: AppColors.bgSurface,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: habit.isCompleted ? AppColors.emeraldGreen.withOpacity(0.5) : AppColors.borderLight,
+          color: habit.isCompleted ? AppColors.emeraldGreen.withValues(alpha: 0.5) : AppColors.borderLight,
           width: habit.isCompleted ? 1.4 : 0.8,
         ),
       ),
@@ -288,7 +290,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: habit.isCompleted ? AppColors.emeraldGreen.withOpacity(0.2) : habit.color.withOpacity(0.15),
+            color: habit.isCompleted ? AppColors.emeraldGreen.withValues(alpha: 0.2) : habit.color.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(

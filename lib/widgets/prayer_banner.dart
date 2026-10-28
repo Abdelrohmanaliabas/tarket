@@ -44,7 +44,7 @@ class _PrayerBannerState extends State<PrayerBanner> {
         border: Border.all(color: AppColors.borderLight),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -61,7 +61,7 @@ class _PrayerBannerState extends State<PrayerBanner> {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: AppColors.emeraldGreen.withOpacity(0.15),
+                      color: AppColors.emeraldGreen.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Icon(Icons.mosque_rounded, color: AppColors.emeraldGreen, size: 20),
@@ -146,10 +146,10 @@ class _PrayerBannerState extends State<PrayerBanner> {
                   margin: const EdgeInsets.symmetric(horizontal: 6),
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                   decoration: BoxDecoration(
-                    color: p.isNext ? AppColors.emeraldGreen.withOpacity(0.18) : AppColors.bgCard,
+                    color: p.isNext ? AppColors.emeraldGreen.withValues(alpha: 0.18) : AppColors.bgCard,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: p.isNext ? AppColors.emeraldGreen : AppColors.borderLight.withOpacity(0.5),
+                      color: p.isNext ? AppColors.emeraldGreen : AppColors.borderLight.withValues(alpha: 0.5),
                       width: p.isNext ? 1.5 : 0.8,
                     ),
                   ),
